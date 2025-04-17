@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Bake-Off Challenge</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {
+      background-color: #fff8f2;
+      border-left: 12px solid #4e2e28;
+      border-right: 12px solid #4e2e28;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    .confetti {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 999;
+    }
+
+    .animated-icon {
+      animation: bounce 1.5s infinite;
+    }
+
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+  </style>
+</head>
+<body class="text-[#4e2e28]">
+
+  <!-- Header -->
+  <header class="text-center py-10 bg-yellow-200 shadow-lg rounded-b-3xl">
+    <h1 class="text-5xl font-extrabold mb-2">🏆 Bake-Off Challenge</h1>
+    <p class="text-lg text-gray-700">Show off your baking skills! Submit your creation and join the monthly challenge 🍪🍞</p>
+  </header>
+
+  <main class="max-w-5xl mx-auto p-6 space-y-16">
+
+    <!-- Countdown Section -->
+    <section class="text-center">
+      <h2 class="text-3xl font-bold mb-4">⏳ Time Left in April Challenge</h2>
+      <div id="countdown" class="text-4xl font-mono text-yellow-600"></div>
+    </section>
+
+    <!-- Submission Form -->
+    <section class="bg-white rounded-xl p-6 shadow-lg">
+      <h2 class="text-2xl font-bold mb-4">📤 Submit Your Creation</h2>
+      <form id="submissionForm" class="space-y-4">
+        <input type="text" name="name" placeholder="Your Name" required class="w-full border p-3 rounded-lg">
+        <input type="text" name="title" placeholder="Recipe Name" required class="w-full border p-3 rounded-lg">
+        <input type="url" name="image" placeholder="Image URL" required class="w-full border p-3 rounded-lg">
+        <textarea name="description" placeholder="Brief Description" required class="w-full border p-3 rounded-lg"></textarea>
+        <button type="submit" class="bg-yellow-400 hover:bg-yellow-500 text-white py-2 px-6 rounded-lg font-semibold">
+          🎉 Submit
+        </button>
+      </form>
+    </section>
+
+    <!-- Winners Wall -->
+    <section>
+      <h2 class="text-3xl font-bold mb-6">🌟 Winners Wall</h2>
+      <div class="grid sm:grid-cols-2 gap-6">
+        <!-- Top Winners -->
+        <div class="bg-white p-4 rounded-xl shadow-md">
+          <h3 class="text-xl font-semibold mb-2">🏅 Top Winners</h3>
+          <ul class="list-disc list-inside text-gray-700">
+            <li>Emily’s Choco Bomb Cookies</li>
+            <li>Ravi’s Rustic Rye Loaf</li>
+            <li>Lila’s Caramel Swirl Rolls</li>
+          </ul>
+        </div>
+
+        <!-- Hall of Fame -->
+        <div class="bg-white p-4 rounded-xl shadow-md">
+          <h3 class="text-xl font-semibold mb-2">🏆 Hall of Fame</h3>
+          <p class="text-gray-600">Celebrating monthly stars who've won 3+ times!</p>
+          <ul class="mt-2 list-disc list-inside text-yellow-700 font-semibold">
+            <li>Chef Mia 🍞</li>
+            <li>Baker Ben 🍪</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Past Winners Carousel -->
+      <div class="mt-10">
+        <h3 class="text-xl font-bold mb-3">📸 Past Creations</h3>
+        <div class="flex overflow-x-auto space-x-4">
+          <img src="Strawberry Shortcake Cookies.jpeg" class="h-40 rounded-lg shadow-md">
+          <img src="Brownie Bread The Perfect Dessert for Chocolate Lovers.jpeg" class="h-40 rounded-lg shadow-md">
+          <img src="White Chocolate Caramel Drizzle Cookies Recipe.jpeg" class="h-40 rounded-lg shadow-md">
+        </div>
+      </div>
+    </section>
+
+    <!-- Recipe Categories -->
+    <section class="bg-yellow-100 p-6 rounded-xl shadow-inner">
+      <h2 class="text-2xl font-bold mb-4">🍰 Explore Recipe Categories</h2>
+      <div class="grid grid-cols-2 gap-4 text-center font-semibold text-[#4e2e28]">
+        <a href="https://sallysbakingaddiction.com/chewy-chocolate-chip-cookies/" class="bg-white p-4 rounded-xl shadow hover:scale-105 transition">Cookies</a>
+        <a href="https://www.indianhealthyrecipes.com/bread-recipes/" class="bg-white p-4 rounded-xl shadow hover:scale-105 transition">Breads</a>
+      </div>
+    </section>
+
+    <!-- Download Recipes -->
+    <section class="text-center">
+      <h2 class="text-2xl font-bold mb-4">📥 Download Top Recipes</h2>
+      <a href="cookiebook1991.pdf" class="bg-yellow-400 hover:bg-yellow-500 text-white px-6 py-3 rounded-lg font-semibold">Download PDF</a>
+    </section>
+
+  </main>
+
+  <!-- Confetti canvas -->
+  <canvas id="confettiCanvas" class="confetti"></canvas>
+
+  <!-- Footer -->
+  <footer class="bg-yellow-200 text-center py-6 mt-10 rounded-t-3xl">
+    <p class="text-[#4e2e28]">© 2025 Rollin’ Bakery Bake-Off. Bake it till you make it! 🍩</p>
+    <a href="index.html" class="text-sm text-blue-800 hover:underline">⬅️ Back to Home</a>
+  </footer>
+
+  <!-- Scripts -->
+  <script>
+    // Countdown
+    const countdown = document.getElementById('countdown');
+    const end = new Date("April 30, 2025 23:59:59").getTime();
+    setInterval(() => {
+      const now = new Date().getTime();
+      const diff = end - now;
+      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+      const hrs = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const mins = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+      countdown.innerText = `${days}d ${hrs}h ${mins}m`;
+    }, 1000);
+
+    // Confetti on submit
+    document.getElementById('submissionForm').addEventListener('submit', e => {
+      e.preventDefault();
+      triggerConfetti();
+      alert("🎉 Submission received! Good luck in the challenge!");
+      e.target.reset();
+    });
+
+    function triggerConfetti() {
+      const canvas = document.getElementById('confettiCanvas');
+      const ctx = canvas.getContext('2d');
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+
+      const pieces = Array.from({ length: 100 }, () => ({
+        x: Math.random() * canvas.width,
+        y: Math.random() * canvas.height,
+        r: Math.random() * 6 + 4,
+        c: `hsl(${Math.random() * 360}, 100%, 70%)`,
+        v: Math.random() * 2 + 1
+      }));
+
+      function draw() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        for (let p of pieces) {
+          ctx.beginPath();
+          ctx.arc(p.x, p.y, p.r, 0, 2 * Math.PI);
+          ctx.fillStyle = p.c;
+          ctx.fill();
+          p.y += p.v;
+          if (p.y > canvas.height) p.y = -p.r;
+        }
+        requestAnimationFrame(draw);
+      }
+
+      draw();
+      setTimeout(() => ctx.clearRect(0, 0, canvas.width, canvas.height), 5000);
+    }
+  </script>
+
+</body>
+</html>

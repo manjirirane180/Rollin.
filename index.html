@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+</head>
+<body>
+  <div class="top-banner">
+    <div class="banner-text left">🏷️ 15% Off on $100+ Purchase</div>
+    <div class="banner-text center">✉️ Subscribe & Save 15%</div>
+    <div class="banner-text right">🏷️ 15% Off on $100+ Purchase</div>
+  </div>
+
+  <div class="navbar">
+    <div class="logo">
+      <span class="brand-name">ROLLIN</span><span class="dot"></span>
+    </div>
+    <ul class="nav-links">
+      <li><a href="cake.html">Cake</a></li>
+      <li><a href="what we are dishing.html">Bakery</a></li>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="cookies.html">Cookies</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="cart.html"> Cart</a></li>
+    </ul>
+    <a href="cooking blog.html">
+      <button class="start-baking">START BAKING</button>
+    </a>
+    
+  </div>
+
+  <div class="promo-section">
+    <h1 class="promo-heading">
+      <span class="word">BAK<span class="letter-overlay">E<span class="badge tasty">TASTY</span></span></span>
+      <span class="word">THE</span>
+      <span class="word">COOKIE<span class="letter-overlay">S<span class="badge crunchy">CRUNCHY</span></span></span>
+    </h1>
+
+    <div class="promo-content">
+      <div class="promo-left">
+        <h3 class="sub-heading">
+          PREMIUM BREAD <br>
+          AND COOKIES MADE <br>
+          FROM SCRATCH <span class="badge fresh">FRESH</span>
+        </h3>
+        <p class="description">We’re literally obsessed with giving <br>more of what you love!</p>
+        <div class="promo-buttons">
+          <a href="bread and cookie .html" class="order-btn">ORDER NOW</a>
+          <a href="cooking blog.html" class="blog-link">COOKING BLOG &gt;</a>
+        </div>
+      </div>
+      <div class="promo-right">
+        <div class="image-wrapper">
+          <img src="bread slices.jpg" alt="Bread" class="bread-img" />
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="delight-section">
+    <div class="delight-image">
+      <img src="long bread.jpg" alt="Basket of Breads" />
+    </div>
+    <div class="delight-content">
+      <h1 class="delight-heading">
+        YOUR <span>ONLY</span> DOSE OF DELIGHT
+        <span class="cookie-icon">🍪<span class="heat">〰️</span></span>
+      </h1>
+      <p class="featured-label" style="color: #444;">Featured Item -</p>
+      <div class="featured-item">
+        <img src="Free Photo _ Croissants on black background_.jpeg" alt="Bagel Buns" />
+        <div class="item-details">
+          <strong style="color:#444 ;">Bagel Buns</strong>
+          <p>Gluten free</p>
+        </div>
+        <div class="item-price">$16</div>
+      </div>
+      <p class="description">
+        All cookies should have a show-stopping German chocolate cake in their
+        repertoire and this is one of our favourites.
+      </p>
+    </div>
+  </div>
+
+  <div class="daily-products">
+    <div class="daily-left">
+      <h2 class="daily-title">PRODUCT WE BAKE <br>HERE DAILY–</h2>
+    </div>
+    <div class="daily-right">
+      <div class="product-tags">
+        <a href="cookies.html" class="tag cookies">Cookies <span>12</span></a>
+        <a href="cake.html" class="tag cake">Cake <span>27</span></a>
+        <a href="bretzel.html" class="tag brezel">Bretzel <span>8</span></a>
+        <a href="pastries.html" class="tag pastries">Pastries <span>23</span></a>
+        <a href="croissant.html" class="tag croissant">Croissant <span>21</span></a>
+        <a href="bagel.html" class="tag bagel">Bagel <span>13</span></a>
+      </div>
+    </div>
+    
+    </div>
+  </div>
+  <div class="product-carousel">
+    <div class="swiper mySwiper">
+      <div class="swiper-wrapper">
+  
+        <div class="swiper-slide">
+          <a href="bagel.html" target="_blank">
+            <img src="crop bagel.jpg" alt="Bagel with Seeds" />
+            <p class="slide-label">BAGEL WITH SEEDS</p>
+          </a>
+        </div>
+  
+        <div class="swiper-slide">
+          <a href="only weat.html" target="_blank">
+            <img src="crop bread.jpg" alt="Sliced Piece Bread" />
+            <p class="slide-label">SLICED PIECE BREAD</p>
+          </a>
+        </div>
+  
+        <div class="swiper-slide">
+          <a href="cookies.html" target="_blank">
+            <img src="crop cookies.jpg" alt="Cookies Glucose" />
+            <p class="slide-label">COOKIES GLUCOSE</p>
+          </a>
+        </div>
+  
+        <div class="swiper-slide">
+          <a href="croissant.html" target="_blank">
+            <img src="Perfect Homemade Croissant Recipe.jpeg" alt="Fresh Croissant" />
+            <p class="slide-label">FRESH CROISSANT</p>
+          </a>
+        </div>
+  
+      </div>
+  
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
+    </div>
+  </div>
+  
+  <script>
+    var swiper = new Swiper(".mySwiper", {
+      slidesPerView: 3,
+      spaceBetween: 20,
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+      breakpoints: {
+        768: { slidesPerView: 3 },
+        480: { slidesPerView: 2 },
+        0:   { slidesPerView: 1 }
+      }
+    });
+  </script>
+
+  <div class="baking-art-section">
+    <div class="baking-slider swiper myBakingSwiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide"><img src="Girasole.jpeg" alt="Baking 1" /></div>
+        <div class="swiper-slide"><img src="Korean_Girl_Baking!.jpeg" alt="Baking 2" /></div>
+        <div class="swiper-slide"><img src="download (10).jpeg" alt="Baking 3" /></div>
+      </div>
+    </div>
+    <div class="baking-content">
+      <h2 class="baking-title">WHY IS BAKING <br>CONSIDERED AS <br><span>ART FORM?</span></h2>
+      <p class="baking-description">
+        Their experience plays a role in the way they work. <br>
+        Bakers use flavours and visual appeal <br>
+        to produce an edible art piece.
+      </p>
+      <a href="bake off.html" class="learn-btn">LEARN BAKING</a>
+    </div>
+  </div>
+
+  <script>
+    var swiper = new Swiper(".myBakingSwiper", {
+      slidesPerView: 1,
+      loop: true,
+      autoplay: {
+        delay: 4000,
+        disableOnInteraction: false,
+      }
+    });
+  </script>
+
+  <section class="bakery-special-section">
+    <div class="bakery-left">
+      <h2 class="bakery-heading">
+        WHY BEKERY’S <span class="emoji">🍪</span><br>
+        ITEMS IS SO SPECIAL <br>
+        TO CUSTOMER?
+      </h2>
+      <div class="bakery-left-images">
+        <div class="img-stack"><img src="Making Christmas Special & Unique.jpeg" alt="Cookie Stack" /></div>
+        <div class="highlight-box">
+          <h3>TASTE THE REAL <br> WHEAT BAKED ITEMS.</h3>
+          <p class="price">$16</p>
+          <img src="cookie.jpeg" alt="Cookies Close" />
+        </div>
+      </div>
+    </div>
+
+    <div class="bakery-right">
+      <div class="chef-grid">
+        <div class="mini-image"><img src="download (11).jpeg" alt="Chicken Roll" /></div>
+        <div class="combo-image">
+          <img src="Premium Photo _ Portrait of male baker holding loaf of breads in paper bag.jpeg" alt="Chef with Bread" />
+          <span class="combo-label">COMBO</span>
+        </div>
+      </div>
+      <div class="quote-box">
+        <p><span class="quote">❝</span> Baking is a craft in itself, and we bake these delicious and crumbly flavours bakery items.</p>
+        <p class="author">— Ashton Cooper</p>
+      </div>
+      <a href="only weat.html" class="shop-btn">SHOP NOW</a>
+    </div>
+  </section>
+
+  <footer class="buttery-footer">
+    <div class="footer-left">
+      <h2><span class="highlight">WITH ENOUGH<br>BUTTER,</span> ANYTHING<br>IS GOOD!</h2>
+      <div class="footer-note">
+        <img src="VectorStock_avabitter.jpeg" alt="Icon" />
+        <p>Our master plan to freshen up a 2,000-year-old</p>
+      </div>
+      <a href="what we are dishing.html"> What we are dishing out?</a>
+    </div>
+    <div class="footer-right">
+      <div class="rating">
+        <h3>3.73 <span class="stars">★★★★★</span></h3>
+        <p>Based on 3,550 reviews.</p>
+        <img src="single cookie.jpg" alt="Cookie" class="cookie-img" />
+      </div>
+      <div class="tags">
+        <span>PLAIN CAKE</span>
+        <span>CROISSANT</span>
+        <span>LOAF BREAD</span>
+        <span>COOKIES</span>
+        <span>BRETZEL</span>
+        <span>APPLE PIE</span>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

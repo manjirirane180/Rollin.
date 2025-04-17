@@ -1,0 +1,772 @@
+/* Entire page background */
+body {
+    margin: 0;
+    font-family: 'Fredoka', sans-serif;
+    background-color: #3b1f10; 
+    color: #fff;
+  }
+  
+  .top-banner {
+    background-color:  #4c2a85;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    font-size: 0.95rem;
+    font-weight: 500;
+    font-family: 'Fredoka', sans-serif;
+    flex-wrap: wrap;
+    border-bottom: 2px solid #fff;
+  }
+  
+  .banner-text {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    flex: 1;
+    justify-content: center;
+  }
+  
+  .banner-text.left {
+    justify-content: flex-start;
+  }
+  
+  .banner-text.right {
+    justify-content: flex-end;
+  }
+  
+  .banner-text i {
+    color: #ffcb05; /* golden yellow for icons */
+    font-size: 1rem;
+  }
+  /* Navbar with light peach background */
+.navbar {
+    background-color: #fff4e6; 
+    color: #3b1f10;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 40px;
+    font-family: 'Fredoka', sans-serif;
+    border-bottom: 2px solid #eee;
+    flex-wrap: wrap;
+    margin: 0 15px 15px 15px;
+  }
+  
+  /* Logo text */
+  .logo {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #000;
+    letter-spacing: 0.5px;
+  }
+  
+  /* Nav links */
+  .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 50px;
+    margin: 0;
+    padding: 0;
+
+  }
+  
+  .nav-links li a {
+    text-decoration: none;
+    color: #000;
+    font-weight: 600;
+    font-size: 1rem;
+    letter-spacing: 0.5px;
+    transition: color 0.3s ease;
+  }
+  
+  .nav-links li a:hover {
+    color: #f25c05;
+  }
+  
+  /* "Start Baking" button */
+  .start-baking {
+    background-color: #ffcb05;
+    color: #000;
+    border: 2px solid #000;
+    padding: 10px 18px;
+    border-radius: 30px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .start-baking:hover {
+    background-color: #f25c05;
+    color: #fff;
+    border-color: #f25c05;
+  }
+  /* Existing styles... */
+
+.logo {
+    font-weight: bold;
+    font-size: 24px;
+    display: flex;
+    align-items: center;
+    color: black;
+  }
+  
+  .brand-name {
+    font-size: 2rem;
+  }
+  
+  .dot {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    background-color: orange;
+    border-radius: 50%;
+    margin-left: 5px;
+    margin-top: 4px;
+  }
+  body {
+    font-family: 'Fredoka', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #fff4e6;
+  }
+  
+  .promo-section {
+    background-color: #fff;
+    margin: 40px auto;
+    border-radius: 30px;
+    padding: 40px 60px;
+    max-width: 1400px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+  }
+  
+  .promo-heading {
+    font-size: 60px;
+    font-weight: 900;
+    color: #3a2100;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    position: relative;
+    margin-bottom: 40px;
+  }
+  
+  .word {
+    position: relative;
+    display: inline-block;
+    font-size: 100px;
+  }
+  
+  .letter-overlay {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .badge {
+    position: absolute;
+    font-size: 15px;
+    padding: 4px 10px;
+    border-radius: 12px;
+    font-weight: bold;
+    color: white;
+    line-height: 1;
+    white-space: nowrap;
+    z-index: 2;
+  }
+  
+  .badge.tasty {
+    background-color: green;
+    top: 50px;
+    right: 14px;
+  }
+  
+  .badge.crunchy {
+    background-color: red;
+    top: 50px;
+    left: -125px;
+  }
+  
+  .badge.fresh {
+    background-color: #1ea7fd;
+    color: white;
+    font-size: 20px;
+    padding: 3px 10px;
+    border-radius: 12px;
+  }
+  
+  .promo-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 40px;
+  }
+  
+  .promo-left {
+    flex: 1;
+  }
+  
+  .sub-heading {
+    font-size: 40px;
+    font-weight: bold;
+    color: #3a2100;
+    line-height: 1.6;
+  }
+  
+  .description {
+    margin-top: 15px;
+    color: #555;
+    font-size: 26px;
+  }
+  
+  .promo-buttons {
+    margin-top: 25px;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+  }
+  
+  .order-btn {
+    background-color: yellow;
+    border: none;
+    padding: 12px 25px;
+    font-weight: bold;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  .blog-link {
+    color: black;
+    font-weight: bold;
+    text-decoration: none;
+    font-size: 16px;
+  }
+  
+  .promo-right {
+    flex: 1;
+  }
+  .image-wrapper {
+    background-color: #ffe100; 
+    border-radius: 20px;
+    padding: 10px; 
+    display: inline-block;
+    max-width: fit-content;
+  }
+  
+  .bread-img {
+    width: 500px;  
+    height: 400px;
+    border-radius: 15px;
+    object-fit: cover;
+    display: block;
+  }
+  .delight-section {
+    display: flex;
+    background-color: #fff4e6;
+    padding: 50px 60px;
+    border-radius: 30px;
+    margin: 40px auto;
+    max-width: 1400px;
+    gap: 40px;
+    align-items: center;
+  }
+  
+  .delight-image {
+    flex: 1;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .delight-image img {
+    width: 380%;
+    max-width: 480px;
+    border-radius: 20px;
+    object-fit: cover;
+  }
+  
+  
+  .delight-content {
+    flex: 2;
+  }
+  
+  .delight-heading {
+    font-size: 48px;
+    font-weight: 900;
+    color: #3a2100;
+    line-height: 1.2;
+    margin: 0 0 20px;
+  }
+  
+  .delight-heading span {
+    color: #000;
+  }
+  
+  .cookie-icon {
+    font-size: 32px;
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 10px;
+    position: relative;
+  }
+  
+  .cookie-icon .heat {
+    font-size: 14px;
+    position: absolute;
+    top: -15px;
+    left: 20px;
+  }
+  
+  .featured-label {
+    font-weight: bold;
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+  
+  .featured-item {
+    display: flex;
+    align-items: center;
+    background-color: #f6f6f6;
+    padding: 15px;
+    border-radius: 15px;
+    width: fit-content;
+    gap: 15px;
+    margin-bottom: 20px;
+  }
+  
+  .featured-item img {
+    width: 150px;
+    height: 100px;
+    border-radius: 10px;
+    object-fit: cover;
+  }
+  
+  .item-details p {
+    margin: 0;
+    font-size: 14px;
+    color: #666;
+  }
+  
+  .item-price {
+    margin-left: auto;
+    font-size: 30px;
+    font-weight: bold;
+    color: #822000;
+  }
+  
+  .description {
+    font-size: 26px;
+    color: #444;
+  }
+  .daily-products {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 60px 20px;
+    max-width: 1000px;
+    margin: auto;
+  }
+  
+  .daily-left {
+    flex: 1 1 30%;
+  }
+  
+  .daily-title {
+    font-family: 'Fredoka', sans-serif;
+    font-size: 2.3rem;
+    color: #331d0d;
+    line-height: 1.4;
+  }
+  
+  .daily-right {
+    flex: 1 1 60%;
+  }
+  
+  .product-tags {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+  }
+  
+  .tag {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 18px;
+    border-radius: 20px;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #331d0d;
+  }
+  
+  .tag span {
+    background-color: #331d0d;
+    color: #fff;
+    border-radius: 999px;
+    padding: 4px 10px;
+    margin-left: 10px;
+    font-size: 0.9rem;
+  }
+  
+  /* Individual tag colors */
+  .cookies { background-color: #dbc9c4; }
+  .cake { background-color: #b2e3ef; }
+  .brezel { background-color: #d8c8f3; }
+  .pastries { background-color: #dcdcdc; }
+  .croissant { background-color: #ffe14f; }
+  .bagel { background-color: #f3a98f; }
+  
+  .product-carousel {
+    padding: 60px 20px;
+    max-width: 1000px;
+    margin: auto;
+  }
+  
+  .swiper {
+    width: 100%;
+    padding-bottom: 40px;
+  }
+  
+  .swiper-slide {
+    background: #fff;
+    border-radius: 20px;
+    text-align: center;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .swiper-slide img {
+    width: 100%;
+    height: auto;
+    border-radius: 20px 20px 0 0;
+  }
+  
+  .slide-label {
+    font-family: 'Fredoka', sans-serif;
+    font-weight: bold;
+    color: #331d0d;
+    padding: 15px 10px;
+    background-color: #fff;
+  }
+  .baking-art-section {
+    background-color: #2b150f;
+    border-radius: 40px;
+    color: white;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 40px 30px;
+    margin: 60px auto;
+    max-width: 1000px;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .baking-slider {
+    flex: 1 1 45%;
+    border-radius: 30px;
+    overflow: hidden;
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .baking-slider img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 20px;
+  }
+  
+  
+  .baking-content {
+    flex: 1 1 45%;
+    padding: 20px;
+  }
+  
+  .baking-title {
+    font-family: 'Fredoka', sans-serif;
+    font-size: 2rem;
+    line-height: 1.4;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  
+  .baking-title span {
+    color: #fff;
+  }
+  
+  .baking-description {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #eee;
+    margin-bottom: 25px;
+  }
+  
+  .learn-btn {
+    background-color: #ffe600;
+    color: #000;
+    font-weight: bold;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 25px;
+    font-size: 0.9rem;
+    cursor: pointer;
+  }
+  .bakery-special-section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 60px auto;
+    padding: 40px;
+    max-width: 1200px;
+    font-family: 'Fredoka', sans-serif;
+    color: #5c2c06; /* chocolate color for all text */
+  }
+  
+  .bakery-left {
+    flex: 1 1 48%;
+  }
+  
+  .bakery-heading {
+    font-size: 2.2rem;
+    font-weight: bold;
+    line-height: 1.4;
+    margin-bottom: 30px;
+    color: #5c2c06; /* chocolate text */
+  }
+  
+  .bakery-left-images {
+    display: flex;
+    gap: 25px;
+    align-items: flex-start;
+  }
+  
+  .img-stack img {
+    width: 190px;
+    height: 270px;
+    object-fit: cover;
+    border-radius: 20px;
+  }
+  
+  .highlight-box {
+    background-color: #572c1a;
+    border-radius: 25px;
+    color: #fff;
+    padding: 20px;
+    width: 240px;
+    height: 300px;
+    position: relative;
+  }
+  
+  .highlight-box h3 {
+    font-size: 1.1rem;
+    line-height: 1.4;
+    margin-bottom: 10px;
+  }
+  
+  .highlight-box .price {
+    font-size: 1.4rem;
+    color: #ffe600;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .highlight-box img {
+    width: 100%;
+    border-radius: 15px;
+    object-fit: contain;
+    height: 200px;
+    position:  absolute;
+    bottom: 15px;
+    left: 15px;
+    right: 15px;
+  }
+  
+  .bakery-right {
+    flex: 1 1 48%;
+    position: relative;
+  }
+  
+  .chef-grid {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+    margin-bottom: 20px;
+  }
+  
+  .mini-image img {
+    width: 200px;
+    height: 180px;
+    border-radius: 20px;
+    object-fit: cover;
+  }
+  
+  .combo-image {
+    position: relative;
+  }
+  
+  .combo-image img {
+    width: 350px;
+    height: 250px;
+    border-radius: 25px;
+    object-fit: cover;
+  }
+  
+  .combo-label {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background-color: #00d97e;
+    color: white;
+    font-size: 0.8rem;
+    font-weight: bold;
+    padding: 6px 12px;
+    border-radius: 10px;
+  }
+  
+  .quote-box {
+    background-color: white;
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 15px;
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #5c2c06;
+    max-width: 350px;
+  }
+  
+  .quote-box .quote {
+    font-size: 1.2rem;
+    color: #5c2c06;
+  }
+  
+  .author {
+    margin-top: 10px;
+    font-weight: bold;
+  }
+  
+  .shop-btn {
+    margin-top: 20px;
+    background-color: #ffe600;
+    border: none;
+    font-weight: bold;
+    padding: 12px 24px;
+    border-radius: 25px;
+    font-size: 1rem;
+    cursor: pointer;
+    color: #5c2c06;
+  }
+  .buttery-footer {
+    background-color: #b5e5e0;
+    border-radius: 40px;
+    padding: 40px 50px;
+    margin: 60px auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    font-family: 'Fredoka', sans-serif;
+    color: #053d42;
+    max-width: 1200px;
+    gap: 40px;
+  }
+  
+  .footer-left h2 {
+    font-size: 2rem;
+    line-height: 1.3;
+    font-weight: bold;
+  }
+  
+  .footer-left .highlight {
+    color: #0b4e59;
+  }
+  
+  .footer-note {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+    gap: 10px;
+  }
+  
+  .footer-note img {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+  }
+  
+  .footer-subtext {
+    margin-top: 10px;
+    font-size: 0.95rem;
+    color: #053d42;
+  }
+  
+  .footer-subtext .underline {
+    text-decoration: underline;
+    font-weight: 500;
+  }
+  
+  .footer-right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    text-align: right;
+    flex: 1;
+  }
+  
+  .rating {
+    position: relative;
+  }
+  
+  .rating h3 {
+    font-size: 1.8rem;
+    margin: 0;
+    color: #053d42;
+  }
+  
+  .rating .stars {
+    color: #053d42;
+
+    font-size: 1.2rem;
+    margin-left: 10px;
+  }
+  
+  .rating p {
+    margin: 5px 0 10px;
+    font-size: 0.9rem;
+  }
+  
+  .cookie-img {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 15px;
+    position: absolute;
+    top: -20px;
+    right: -70px;
+  }
+  
+  .tags {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 20px;
+  }
+  
+  .tags span {
+    border: 2px solid #053d42;
+    padding: 8px 14px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: bold;
+    color: #053d42;
+  }
+  

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Your Cart</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {
+      background-color: #fff8f2;
+      border-left: 12px solid #4e2e28;
+      border-right: 12px solid #4e2e28;
+    }
+  </style>
+</head>
+<body class="text-[#4e2e28] min-h-screen flex flex-col">
+
+  <header class="text-center p-6">
+    <h1 class="text-5xl font-extrabold flex justify-center items-center gap-3">
+      🛍️ Your Cart
+    </h1>
+    <p class="text-lg mt-2">Here's what you picked from our bakery delights!</p>
+  </header>
+
+  <main class="flex-grow px-6 max-w-5xl mx-auto">
+    <div id="cartItems" class="grid grid-cols-1 sm:grid-cols-2 gap-6"></div>
+    <div id="cartSummary" class="text-xl font-semibold mt-10 text-right"></div>
+  </main>
+
+  <footer class="bg-blue-100 mt-12 p-6 text-center rounded-t-3xl shadow-inner">
+    <a href="index.html" class="text-[#4e2e28] font-semibold text-lg hover:underline">⬅️ Back to Shop</a>
+    <p class="text-xs text-gray-500 mt-2">© 2025 Rollin' Bakery. Baked with love 🧁</p>
+  </footer>
+
+  <script>
+    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+    const cartItemsDiv = document.getElementById('cartItems');
+    const cartSummaryDiv = document.getElementById('cartSummary');
+
+    if (cart.length === 0) {
+      cartItemsDiv.innerHTML = '<p class="text-center text-xl mt-8">Your cart is empty 😢</p>';
+      cartSummaryDiv.innerHTML = '';
+    } else {
+      let total = 0;
+      cart.forEach(item => {
+        total += parseFloat(item.price);
+        cartItemsDiv.innerHTML += `
+          <div class="bg-white p-4 rounded-xl shadow-md flex gap-4 items-center">
+            <img src="${item.image}" alt="${item.name}" class="w-32 h-24 object-cover border-2 border-yellow-300 rounded-lg">
+            <div>
+              <h3 class="text-xl font-bold">${item.name}</h3>
+              <p class="text-yellow-700 font-semibold">$${item.price.toFixed(2)}</p>
+            </div>
+          </div>
+        `;
+      });
+      cartSummaryDiv.innerHTML = `Total: $${total.toFixed(2)}`;
+    }
+    
+  </script>
+<!-- Proceed Order Button -->
+<div style="text-align: center; margin: 40px;">
+    <button id="showOrderForm" style="padding: 12px 30px; font-size: 16px; background-color: #5a3a22; color: white; border: none; border-radius: 5px; cursor: pointer;">
+      Proceed Order
+    </button>
+  </div>
+  
+  <!-- Hidden Order Form Section -->
+  <div class="order-form" id="orderFormSection" style="display: none; background-color: #fff9ee; margin: 20px; padding: 20px; border: 1px solid #ccc; border-radius: 8px;">
+    <h2>Order Details</h2>
+    <form id="orderForm">
+      <label>Full Name:</label>
+      <input type="text" name="fullName" required>
+  
+      <label>Address:</label>
+      <textarea name="address" required></textarea>
+  
+      <label>Phone Number:</label>
+      <input type="tel" name="phone" required>
+  
+      <label>Email:</label>
+      <input type="email" name="email" required>
+  
+      <label>Payment Method:</label>
+      <select name="payment" required>
+        <option value="">Select</option>
+        <option value="Cash on Delivery">Cash on Delivery</option>
+        <option value="Credit Card">Credit Card</option>
+        <option value="UPI">UPI</option>
+        <option value="Net Banking">Net Banking</option>
+      </select>
+  
+      <br><br>
+      <button type="submit" style="padding: 10px 20px; background-color: #5a3a22; color: white; border: none; border-radius: 5px; cursor: pointer;">
+        Submit Order
+      </button>
+    </form>
+  </div>
+  
+  <!-- Script to Show Order Form -->
+  <script>
+    document.getElementById("showOrderForm").addEventListener("click", function() {
+      document.getElementById("orderFormSection").style.display = "block";
+      this.style.display = "none";
+    });
+  
+    document.getElementById("orderForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+      const orderData = {
+        fullName: this.fullName.value,
+        address: this.address.value,
+        phone: this.phone.value,
+        email: this.email.value,
+        payment: this.payment.value,
+        items: JSON.parse(localStorage.getItem("cart")) || []
+      };
+      localStorage.setItem("orderData", JSON.stringify(orderData));
+      alert("Order submitted successfully!");
+      localStorage.removeItem("cart");
+      window.location.reload();
+    });
+  </script>
+  
+</body>
+</html>

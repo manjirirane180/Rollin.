@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Cooking Blog - Rollin' Bakery</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {
+      background-color: #fff8f2;
+      border-left: 12px solid #4e2e28;
+      border-right: 12px solid #4e2e28;
+    }
+    .section {
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .section:hover {
+      transform: scale(1.02);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    }
+  </style>
+</head>
+<body class="text-gray-800">
+
+  <div class="max-w-6xl mx-auto px-6 py-10">
+    <!-- Header -->
+    <h1 class="text-5xl font-extrabold text-center text-[#4e2e28] mb-6 flex items-center justify-center gap-3">
+      <span>📖</span> COOKING BLOG <span>🍽️</span>
+    </h1>
+    <p class="text-center text-lg text-[#a0523d] mb-12">Discover our finest recipes and bake like a pro!</p>
+
+    <!-- Our Special Recipes Heading -->
+    <h2 class="text-3xl font-bold text-center text-[#4e2e28] mb-8">🍞 OUR SPECIAL RECIPES 🍪</h2>
+
+    <!-- Videos Section -->
+    <div class="grid sm:grid-cols-2 gap-6 mb-12">
+      <div class="section bg-white p-4 rounded-xl shadow-lg">
+        <h3 class="text-xl font-bold text-[#4e2e28] mb-3">How to Bake Perfect Cookies</h3>
+        <iframe class="w-full aspect-video rounded-md" src="cookie video.mp4" title="Cookies" allowfullscreen></iframe>
+      </div>
+      <div class="section bg-white p-4 rounded-xl shadow-lg">
+        <h3 class="text-xl font-bold text-[#4e2e28] mb-3">Mastering Rustic Breads</h3>
+        <iframe class="w-full aspect-video rounded-md" src="bread video.mp4" title="Bread" allowfullscreen></iframe>
+      </div>
+    </div>
+
+    <!-- Recipes Section -->
+    <div class="grid sm:grid-cols-2 gap-8">
+
+      <!-- Cookie Recipes -->
+      <div class="section bg-white p-6 rounded-xl shadow-md">
+        <h3 class="text-2xl font-bold text-[#4e2e28] mb-4">🍪 Choco Chip Cookie</h3>
+        <ul class="list-disc pl-5 text-[#4e2e28] mb-3">
+          <li>1 cup unsalted butter</li>
+          <li>1 cup brown sugar</li>
+          <li>2 cups flour</li>
+          <li>2 cups chocolate chips</li>
+        </ul>
+        <p class="text-[#6b3e36]">Cream butter & sugar, add eggs & mix in flour. Fold in chips. Bake at 350°F for 12 mins.</p>
+      </div>
+
+      <div class="section bg-white p-6 rounded-xl shadow-md">
+        <h3 class="text-2xl font-bold text-[#4e2e28] mb-4">🍪 Oatmeal Raisin Cookie</h3>
+        <ul class="list-disc pl-5 text-[#4e2e28] mb-3">
+          <li>1 cup oats</li>
+          <li>½ cup brown sugar</li>
+          <li>¾ cup flour</li>
+          <li>½ cup raisins</li>
+        </ul>
+        <p class="text-[#6b3e36]">Mix ingredients, scoop dough, and bake at 350°F for 10-12 minutes.</p>
+      </div>
+
+      <div class="section bg-white p-6 rounded-xl shadow-md">
+        <h3 class="text-2xl font-bold text-[#4e2e28] mb-4">🍪 Peanut Butter Cookie</h3>
+        <ul class="list-disc pl-5 text-[#4e2e28] mb-3">
+          <li>1 cup peanut butter</li>
+          <li>¾ cup sugar</li>
+          <li>1 egg</li>
+          <li>1 tsp vanilla extract</li>
+        </ul>
+        <p class="text-[#6b3e36]">Mix all ingredients, shape, press with fork, and bake at 350°F for 8-10 mins.</p>
+      </div>
+
+      <!-- Bread Recipes -->
+      <div class="section bg-white p-6 rounded-xl shadow-md">
+        <h3 class="text-2xl font-bold text-[#4e2e28] mb-4">🍞 Sourdough Bread</h3>
+        <ul class="list-disc pl-5 text-[#4e2e28] mb-3">
+          <li>3½ cups bread flour</li>
+          <li>1 cup starter</li>
+          <li>1½ cups water</li>
+          <li>2 tsp salt</li>
+        </ul>
+        <p class="text-[#6b3e36]">Mix, knead, rise 4-6 hrs, shape, rest, bake at 450°F for 45 mins.</p>
+      </div>
+
+      <div class="section bg-white p-6 rounded-xl shadow-md">
+        <h3 class="text-2xl font-bold text-[#4e2e28] mb-4">🍞 Whole Wheat Bread</h3>
+        <ul class="list-disc pl-5 text-[#4e2e28] mb-3">
+          <li>2 cups whole wheat flour</li>
+          <li>1 tbsp honey</li>
+          <li>1 cup warm water</li>
+          <li>1 tsp yeast</li>
+        </ul>
+        <p class="text-[#6b3e36]">Combine, let rise, shape into loaf, proof, and bake at 375°F for 35 mins.</p>
+      </div>
+
+      <div class="section bg-white p-6 rounded-xl shadow-md">
+        <h3 class="text-2xl font-bold text-[#4e2e28] mb-4">🍞 French Baguette</h3>
+        <ul class="list-disc pl-5 text-[#4e2e28] mb-3">
+          <li>3¼ cups flour</li>
+          <li>1¼ cups water</li>
+          <li>1 tsp yeast</li>
+          <li>1½ tsp salt</li>
+        </ul>
+        <p class="text-[#6b3e36]">Mix, knead, let rise, shape into baguettes, proof, and bake at 450°F for 20 mins.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="bg-yellow-100 text-center p-6 mt-12">
+    <p class="text-[#4e2e28] font-semibold">Love our recipes? Head back to shop for the real taste!</p>
+    <a href="index.html" class="inline-block mt-3 text-white bg-[#4e2e28] hover:bg-[#6b3e36] px-5 py-2 rounded-full transition-all">⬅️ Back to Home</a>
+    <p class="text-xs text-gray-500 mt-4">© 2025 Rollin' Bakery – Baking is love made edible 🍪</p>
+  </footer>
+
+</body>
+</html>
