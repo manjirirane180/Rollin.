@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Cookies</title>
+  <style>
+    body {
+      background-color: #f3e5f5;
+      border: 10px solid #6a1b9a;
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      color: #4a148c;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    header {
+      text-align: center;
+      padding: 20px;
+      font-size: 2em;
+      background-color: #e1bee7;
+      border-bottom: 4px dashed #ab47bc;
+    }
+
+    .products-section {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+      padding: 30px;
+      flex: 1;
+    }
+
+    .product {
+      background-color: #fff;
+      border: 2px solid #ce93d8;
+      border-radius: 15px;
+      padding: 15px;
+      text-align: center;
+      box-shadow: 2px 2px 10px rgba(106, 27, 154, 0.1);
+    }
+
+    .product img {
+      width: 100%;
+      height: 160px;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+
+    .product h3 {
+      margin: 10px 0 5px;
+    }
+
+    .price {
+      font-weight: bold;
+      color: #6a1b9a;
+      margin-bottom: 10px;
+    }
+
+    .add-btn {
+      background-color: #ab47bc;
+      color: white;
+      border: none;
+      padding: 8px 12px;
+      border-radius: 20px;
+      cursor: pointer;
+    }
+
+    .add-btn:hover {
+      background-color: #8e24aa;
+    }
+
+    #cart-icon {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #ab47bc;
+      color: white;
+      border-radius: 50%;
+      padding: 15px;
+      font-size: 24px;
+      cursor: pointer;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      z-index: 999;
+    }
+
+    footer {
+      background-color: #e1bee7;
+      color: #4a148c;
+      text-align: center;
+      padding: 20px;
+      border-top: 4px dashed #ab47bc;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    🍪 Sweet Cookie Collection 🍪
+  </header>
+
+  <section class="products-section" id="cookies"></section>
+
+  <div id="cart-icon" onclick="location.href='cart.html'">🛒</div>
+
+  <footer>
+    © 2025 Rollin Bakery | <a href="index.html" style="color:#4a148c; text-decoration: none;">← Back to Home</a>
+  </footer>
+
+  <script>
+    const cookies = [
+      { image: "Double Chocolate Chip Cookies.jpeg", name: "Classic Chocolate Chip", price: 2.99 },
+      { image: "Oatmeal Raisin Cookies.jpeg", name: "Oatmeal Raisin", price: 2.49 },
+      { image: "The Best Peanut Butter Cookies from The Food Charlatan_.jpeg", name: "Peanut Butter", price: 2.79 },
+      { image: "cookie4.jpeg", name: "White Chocolate Macadamia", price: 3.25 },
+      { image: "cookie5.jpeg", name: "Double Chocolate", price: 3.10 },
+      { image: "cookie6.jpeg", name: "Snickerdoodle", price: 2.60 },
+      { image: "cookie7.jpeg", name: "Mint Chocolate", price: 3.00 },
+      { image: "cookie9.jpeg", name: "Almond Crunch", price: 2.89 },
+      { image: "cookie10.jpeg", name: "Salted Caramel", price: 3.35 },
+      { image: "cookie11.jpeg", name: "Coconut Chew", price: 2.95 },
+      { image: "cookie12.jpeg", name: "Strawberry Cream", price: 3.20 },
+      { image: "cookie13.jpeg", name: "Toffee Delight", price: 3.40 }
+    ];
+
+    const section = document.getElementById("cookies");
+    cookies.forEach(cookie => {
+      const div = document.createElement("div");
+      div.className = "product";
+      div.innerHTML = `
+        <img src="${cookie.image}" alt="${cookie.name}">
+        <h3>${cookie.name}</h3>
+        <div class="price">$${cookie.price.toFixed(2)}</div>
+        <button class="add-btn" onclick='addToCart(${JSON.stringify(cookie)})'>Add to Cart</button>
+      `;
+      section.appendChild(div);
+    });
+
+    function addToCart(item) {
+      const cart = JSON.parse(localStorage.getItem("cart")) || [];
+      cart.push(item);
+      localStorage.setItem("cart", JSON.stringify(cart));
+      window.location.href = "cart.html";
+    }
+  </script>
+</body>
+</html>
