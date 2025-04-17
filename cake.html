@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cake Delights</title>
+  <style>
+    body {
+      background-color: #e0f7fa;
+      border: 10px solid #5c4033;
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      color: #4e2e28;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    header {
+      text-align: center;
+      padding: 20px;
+      font-size: 2em;
+      background-color: #b2ebf2;
+      border-bottom: 4px dashed #00bcd4;
+    }
+
+    .products-section {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+      padding: 30px;
+      flex: 1;
+    }
+
+    .product {
+      background-color: #ffffff;
+      border: 2px solid #80deea;
+      border-radius: 15px;
+      padding: 15px;
+      text-align: center;
+      box-shadow: 2px 2px 10px rgba(92, 64, 51, 0.1);
+    }
+
+    .product img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+
+    .product h3 {
+      margin: 10px 0 5px;
+    }
+
+    .price {
+      font-weight: bold;
+      color: #006064;
+      margin-bottom: 10px;
+    }
+
+    .add-btn {
+      background-color: #00bcd4;
+      color: white;
+      border: none;
+      padding: 8px 12px;
+      margin-top: 10px;
+      border-radius: 20px;
+      cursor: pointer;
+    }
+
+    .add-btn:hover {
+      background-color: #0097a7;
+    }
+
+    #cart-icon {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #00bcd4;
+      color: white;
+      border-radius: 50%;
+      padding: 15px;
+      font-size: 24px;
+      cursor: pointer;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      z-index: 999;
+    }
+
+    footer {
+      background-color: #b2ebf2;
+      color: #004d40;
+      text-align: center;
+      padding: 25px;
+      font-size: 1em;
+      border-top: 4px dashed #00bcd4;
+      border-radius: 25px 25px 0 0;
+    }
+
+    footer a {
+      color: #004d40;
+      text-decoration: none;
+      margin: 0 10px;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    🍰 Cake Delights - A Slice of Heaven 🍰
+  </header>
+
+  <section class="products-section" id="cakes"></section>
+
+  <div id="cart-icon" onclick="location.href='cart.html'">
+    🛒
+  </div>
+
+  <footer>
+    © 2025 Rollin Bakery |
+    <a href="index.html">← Go to Home</a>
+    <p>"Life is short, eat the cake!" ✨🎂😍</p>
+  </footer>
+
+  <script>
+    const cakes = [
+      { name: "Chocolate Dream", price: 5.99, image: "Chocolate Cake With Bavarian Cream Filling _ Foodal.jpeg" },
+      { name: "Strawberry Swirl", price: 6.49, image: "Strawberry Swirl Cake - Mirage Margarine.jpeg" },
+      { name: "Lemon Zest", price: 5.49, image: "Lemon Cake.jpeg" },
+      { name: "Vanilla Bean", price: 4.99, image: "Fluffy Vanilla Bean Cake.jpeg" },
+      { name: "Red Velvet", price: 6.29, image: "Best Red Velvet Cake (Soft, Moist And Easy).jpeg" },
+      { name: "Carrot Crunch", price: 5.79, image: "Classic Carrot Cake Recipe _ Digital Download PDF.jpeg" },
+      { name: "Mango Mousse", price: 6.99, image: "Mango Mousse Cake.jpeg" },
+      { name: "Black Forest", price: 5.59, image: "Black Forest Cake.jpeg" },
+      { name: "Mocha Marvel", price: 6.10, image: "The Best Mocha Mousse Cake.jpeg" },
+      { name: "Berry Bliss", price: 6.89, image: "Lemon-Blueberry Bliss Cake 🍋🫐.jpeg" },
+      { name: "Hazelnut Heaven", price: 6.25, image: "Heavenly Hazelnut Cake With Chocolate Hazelnut Ganache & Buttercream.jpeg" },
+      { name: "Pineapple Passion", price: 5.89, image: "Juicy pineapple Heaven Cake.jpeg" },
+      { name: "Tiramisu Delight", price: 6.75, image: "Luxurious Tiramisu Cake with Mascarpone Frosting -.jpeg" },
+      { name: "Coffee Crave", price: 5.95, image: "Cinnamon Streusel Coffee Cake.jpeg" },
+      { name: "Mint Magic", price: 5.35, image: "Choc-mint magic cake.jpeg" },
+      { name: "Choco Chip Chiffon", price: 5.99, image: "Chocolate Chiffon Cake.jpeg" },
+      { name: "Fudge Fantasy", price: 6.45, image: "Chocolate Fudge easy to make and tasty.jpeg" },
+      { name: "Banana Split", price: 5.65, image: "banana split cake recipe.jpeg" },
+      { name: "Rose Romance", price: 6.50, image: "Rose cake.jpeg" },
+      { name: "Blueberry Burst", price: 5.85, image: "Blueberry Streusel Muffin Cake - Cake by Courtney.jpeg" },
+      { name: "Almond Amour", price: 6.30, image: "Amaretto Almond Pound Cake - FunCraftyKitchen.jpeg" },
+      { name: "Coconut Cloud", price: 5.55, image: "Coconut Cloud Cake.jpeg" },
+      { name: "Cherry Charm", price: 5.70, image: "Miss Cherry Shakewell Cake – Priceless Magazines.jpeg" },
+      { name: "Nutty Nirvana", price: 6.60, image: "Chocolate Nut Cake.jpeg" },
+      { name: "Peach Paradise", price: 6.10, image: "Peach Mascarpone Cake - Fanciful Eats.jpeg" },
+      { name: "Raspberry Ripple", price: 5.40, image: "Raspberry ripple loaf cake _ Asda Good Living.jpeg" },
+      { name: "Tutti Frutti", price: 6.15, image: "Tutti Frutti Cake Recipe.jpeg" }
+    ];
+
+    const section = document.getElementById("cakes");
+    cakes.forEach(cake => {
+      const div = document.createElement("div");
+      div.className = "product";
+      div.innerHTML = `
+        <img src="${cake.image}" alt="${cake.name}">
+        <h3>${cake.name}</h3>
+        <div class="price">$${cake.price.toFixed(2)}</div>
+        <button class="add-btn" onclick='addToCart(${JSON.stringify(cake)})'>Add to Cart</button>
+      `;
+      section.appendChild(div);
+    });
+
+    function addToCart(item) {
+      const cart = JSON.parse(localStorage.getItem("cart")) || [];
+      cart.push(item);
+      localStorage.setItem("cart", JSON.stringify(cart));
+      window.location.href = "cart.html";
+    }
+  </script>
+</body>
+</html>

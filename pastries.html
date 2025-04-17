@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Pastry Picks</title>
+  <style>
+    body {
+      background-color: #f1f1f1;
+      border: 10px solid #5c4033;
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      color: #3e3e3e;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    header {
+      text-align: center;
+      padding: 20px;
+      font-size: 2em;
+      background-color: #dce7f1;
+      border-bottom: 4px dashed #607d8b;
+    }
+
+    .products-section {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+      padding: 30px;
+      flex: 1;
+    }
+
+    .product {
+      background-color: #ffffff;
+      border: 2px solid #cfd8dc;
+      border-radius: 15px;
+      padding: 15px;
+      text-align: center;
+      box-shadow: 2px 2px 10px rgba(92, 64, 51, 0.1);
+    }
+
+    .product img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+
+    .product h3 {
+      margin: 10px 0 5px;
+    }
+
+    .price {
+      font-weight: bold;
+      color: #37474f;
+      margin-bottom: 10px;
+    }
+
+    .add-btn {
+      background-color: #607d8b;
+      color: white;
+      border: none;
+      padding: 8px 12px;
+      margin-top: 10px;
+      border-radius: 20px;
+      cursor: pointer;
+    }
+
+    .add-btn:hover {
+      background-color: #455a64;
+    }
+
+    #cart-icon {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #607d8b;
+      color: white;
+      border-radius: 50%;
+      padding: 15px;
+      font-size: 24px;
+      cursor: pointer;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      z-index: 999;
+    }
+
+    footer {
+      background-color: #dce7f1;
+      color: #37474f;
+      text-align: center;
+      padding: 25px;
+      font-size: 1em;
+      border-top: 4px dashed #607d8b;
+      border-radius: 25px 25px 0 0;
+    }
+
+    footer a {
+      color: #37474f;
+      text-decoration: none;
+      margin: 0 10px;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    🥐 Perfect Pastries Collection 🥐
+  </header>
+
+  <section class="products-section" id="pastries"></section>
+
+  <div id="cart-icon" onclick="location.href='cart.html'">
+    🛒
+  </div>
+
+  <footer>
+    © 2025  Rollin Bakery |
+    <a href="index.html">← Go to Home</a>
+    <p>"Happiness is just a pastry away!" 🥮💙</p>
+  </footer>
+
+  <script>
+    const pastries = [
+      { name: "Apple Turnover", price: 3.49, image: "p1.jpeg" },
+      { name: "Chocolate Éclair", price: 4.29, image: "p2.jpeg" },
+      { name: "Vanilla Cream Puff", price: 3.99, image: "p3.jpeg" },
+      { name: "Blueberry Danish", price: 4.10, image: "p4.jpeg" },
+      { name: "Raspberry Tart", price: 4.59, image: "p5.jpeg" },
+      { name: "Cinnamon Roll", price: 3.75, image: "p6.jpeg" },
+      { name: "Cheese Danish", price: 4.05, image: "p7.jpeg" },
+      { name: "Lemon Bar", price: 3.80, image: "p8.jpeg" },
+      { name: "Cherry Strudel", price: 4.25, image: "p9.jpeg" },
+      { name: "Almond Croissant", price: 4.35, image: "p10.jpeg" },
+      { name: "Chocolate Croissant", price: 4.50, image: "p11.jpeg" },
+      { name: "Strawberry Danish", price: 4.15, image: "p12.jpeg" },
+      { name: "Hazelnut Swirl", price: 4.40, image: "p13.jpeg" },
+      { name: "Pumpkin Pie Puff", price: 4.60, image: "p14.jpeg" },
+      { name: "Maple Pecan Twist", price: 4.70, image: "p15.jpeg" },
+      { name: "Caramel Apple Puff", price: 4.95, image: "p16.jpeg" },
+      { name: "Peach Pocket", price: 4.20, image: "p17.jpeg" },
+      { name: "Banana Nut Slice", price: 3.90, image: "p18.jpeg" },
+      { name: "Apricot Delight", price: 4.10, image: "p19.jpeg" },
+      { name: "Walnut Spiral", price: 4.30, image: "p20.jpeg" },
+      { name: "Coconut Square", price: 4.45, image: "p21.jpeg" },
+      { name: "Mixed Berry Crumble", price: 4.85, image: "p22.jpeg" },
+      { name: "Pineapple Puff", price: 4.00, image: "p23.jpeg" }
+    ];
+
+    const section = document.getElementById("pastries");
+    pastries.forEach(p => {
+      const div = document.createElement("div");
+      div.className = "product";
+      div.innerHTML = `
+        <img src="${p.image}" alt="${p.name}">
+        <h3>${p.name}</h3>
+        <div class="price">$${p.price.toFixed(2)}</div>
+        <button class="add-btn" onclick='addToCart(${JSON.stringify(p)})'>Add to Cart</button>
+      `;
+      section.appendChild(div);
+    });
+
+    function addToCart(item) {
+      const cart = JSON.parse(localStorage.getItem("cart")) || [];
+      cart.push(item);
+      localStorage.setItem("cart", JSON.stringify(cart));
+      window.location.href = "cart.html";
+    }
+  </script>
+</body>
+</html>
